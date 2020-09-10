@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- ***** About Area Starts ***** -->
+<div class="main-banner header-text" id="top">
+     <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>About Me</h6>
+                            <h2>I work with top brands and startups</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'assets/images/service-item-01.png' %}" alt="">
+                                    <h4>Top Notch</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'assets/images/service-item-01.png' %}" alt="">
+                                    <h4>Robust</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'assets/images/contact-info-03.png' %}" alt="">
+                                    <h4>Reliable</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'assets/images/contact-info-03.png' %}" alt="">
+                                    <h4>Up-to-date</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        <p>
+                        {% for item in about_object %}
+                            {% if item.name %}
+                            <div>Name</div>
+                            <div>{{item.name}}</div>
+                            {% endif %}
+
+                            {% if item.description %}
+                            <hr>
+                             <div>Description</div>
+                            <div>{{item.description|safe}}</div>
+                            {% endif %}
+
+                            {% if item.address %}
+                            <hr>
+                             <div>Address</div>
+                            <div>{{item.address}}</div>
+                            {% endif %}
+
+                            {% if item.skills %}
+                            <hr>
+                             <div>skills</div>
+                            <div>{{item.skills|safe}}</div>
+                            {% endif %}
+
+                            {% if item.past_work_experiences %}
+                            <hr>
+                             <div>Past Experience</div>
+                            <div>{{item.past_work_experiences|safe}}</div>
+                            {% endif %}
+
+
+                        {% endfor %}
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Area Ends ***** -->
+</div>
+{% endblock%}

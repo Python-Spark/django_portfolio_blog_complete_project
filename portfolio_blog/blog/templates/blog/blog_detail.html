@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="container pt-4">
+    <h3><b>{{blog_object.name}}</b></h3>
+        <br>
+        <small>
+            Created date: {{blog_object.created_date}}
+
+        </small>
+        <br>
+
+    <hr>
+    {{ blog_object.description|safe }}
+    </div>
+
+</div>
+{% endblock%}
+
+
